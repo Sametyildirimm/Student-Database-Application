@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="_210201090_project.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:_210201090_project"
+    Shell.FlyoutBehavior="Disabled"
+    Title="_210201090_project">
+
+    <TabBar>
+
+        <Tab Title="Student" Icon="students.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        </Tab>
+
+        <Tab Title="Course" Icon="courses.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page2}" Route="Page2"/>
+        </Tab>
+
+        <Tab Title="Enroll" Icon="enrollment.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page3}" Route="Page3"/>
+        </Tab>
+
+    </TabBar>
+
+
+
+</Shell>

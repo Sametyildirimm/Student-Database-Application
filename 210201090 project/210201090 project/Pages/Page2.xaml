@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_210201090_project.Page2"
+           >
+
+    <StackLayout BackgroundColor="Aqua">
+        <Label Text="Code"/>
+        <Entry x:Name="CRS_Code" BackgroundColor="White"/>
+        <Label Text="Name"/>
+        <Entry x:Name="CRS_Name" BackgroundColor="White"/>
+        <Button TextColor="Black" BackgroundColor="White" x:Name="Button_Add2" Text="Add" Clicked="Button_Add2_Clicked"/>
+
+
+        <Button x:Name="Button_Show2" TextColor="Black" BackgroundColor="White" Text="Show" Clicked="Button_Show2_Clicked"/>
+
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Courses" TextColor="White" Margin="0,10,0,10" FontSize="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <ListView x:Name="Course_List_View"
+           HasUnevenRows="True"
+           ItemTapped="Course_List_View_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding CourseCode}"/>
+                                    <Label Text="{Binding CourseName}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+
+
+
+
+</ContentPage>

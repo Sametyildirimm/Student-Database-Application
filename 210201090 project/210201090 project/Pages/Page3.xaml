@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_210201090_project.Page3"
+             >
+    <Grid BackgroundColor="Aqua">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ScrollView Grid.Row="0" Grid.Column="0">
+            <ListView x:Name="Stu_List_View" HasUnevenRows="True" ItemSelected="Stu_List_View_ItemSelected">
+                
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Department}" />
+                            </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+
+        <ScrollView Grid.Row="0" Grid.Column="2">
+            <ListView x:Name="Course_List_View" HasUnevenRows="True" ItemSelected="Course_List_View_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding CourseCode}" />
+                                <Label Text="{Binding CourseName}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+
+        <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center">
+            <Button Text="Add" Clicked="Button_Clicked"  BackgroundColor="White" TextColor="Black"  />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.Column="1" HorizontalOptions="Center">
+            <Button Text="Show" Clicked="Button_Clicked_1"  BackgroundColor="White" TextColor="Black"  />
+        </StackLayout>
+
+        <ScrollView Grid.Row="3" Grid.ColumnSpan="3">
+            <StackLayout>
+                <Label Text="Enrollment" TextColor="White" Margin="0,10,0,10" FontSize="25" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <ListView x:Name="Enroll_List_View" HasUnevenRows="True" ItemTapped="Enroll_List_View_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Department}" />
+                                <Label Text=" - " />
+                                <Label Text="{Binding CourseCode}" />
+                                <Label Text="{Binding CourseName}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
